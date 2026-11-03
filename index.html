@@ -1,0 +1,960 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Divicom Global Services | Oil & Gas, Civil Construction & GHS Systems</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            blue: '#0040C1',
+                            navy: '#002B82',
+                            light: '#E6EEFF',
+                            silver: '#7A8A9E',
+                            metallic: '#E2E8F0',
+                            accent: '#0066FF',
+                            dark: '#0F172A'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .hero-bg {
+            background: linear-gradient(135deg, rgba(0, 43, 130, 0.94) 0%, rgba(15, 23, 42, 0.92) 100%), 
+                        url('https://images.unsplash.com/photo-1541888946425-d0fbb186a5b3?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+        }
+        .ghs-bg {
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.96) 0%, rgba(0, 64, 193, 0.9) 100%), 
+                        url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+        }
+        .nav-active {
+            color: #0040C1 !important;
+            border-bottom: 2px solid #0040C1;
+            font-weight: 700;
+        }
+        .silver-gradient {
+            background: linear-gradient(135deg, #ffffff 0%, #F1F5F9 50%, #E2E8F0 100%);
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900 antialiased selection:bg-brand-blue selection:text-white flex flex-col min-h-screen">
+
+    <!-- TOP ANNOUNCEMENT BAR -->
+    <div class="bg-brand-navy text-white text-xs py-2 px-4 border-b border-brand-blue/30">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2">
+            <div class="flex items-center gap-4">
+                <span><i class="fa-solid fa-certificate text-blue-400 mr-1.5"></i> Strategic Global Partner: <strong>Global Housing Solutions (GHS Austria)</strong></span>
+                <span class="hidden md:inline text-slate-400">|</span>
+                <span class="hidden md:inline"><i class="fa-solid fa-shield-halved text-emerald-400 mr-1.5"></i> 100% HSE Compliant Operations</span>
+            </div>
+            <div class="flex items-center gap-4 text-slate-300">
+                <a href="tel:+2348000000000" class="hover:text-white transition-colors"><i class="fa-solid fa-phone text-xs mr-1"></i> +234 (0) 800 DIVICOM</a>
+                <span>|</span>
+                <a href="mailto:info@divicomglobal.com" class="hover:text-white transition-colors"><i class="fa-solid fa-envelope text-xs mr-1"></i> info@divicomglobal.com</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN HEADER NAVIGATION & BRANDING -->
+    <header class="bg-white sticky top-0 z-50 border-b border-slate-200 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-24">
+                
+                <!-- BRAND LOGO & TAGLINE INTEGRATION -->
+                <a href="#" onclick="switchTab('home')" class="flex items-center gap-4 group py-2">
+                    <!-- SVG Recreation of Official Divicom Helm/Steering Wheel Logo -->
+                    <div class="relative w-16 h-16 flex items-center justify-center shrink-0">
+                        <svg viewBox="0 0 200 200" class="w-full h-full drop-shadow-md">
+                            <!-- Outer Wheel Ring & Spokes (Blue #0040C1) -->
+                            <circle cx="90" cy="100" r="55" fill="none" stroke="#0040C1" stroke-width="12"/>
+                            <circle cx="90" cy="100" r="30" fill="none" stroke="#0040C1" stroke-width="8"/>
+                            <circle cx="90" cy="100" r="14" fill="#0040C1"/>
+                            
+                            <!-- Helm Handles (8 Handles) -->
+                            <rect x="85" y="25" width="10" height="30" rx="5" fill="#0040C1"/>
+                            <rect x="85" y="145" width="10" height="30" rx="5" fill="#0040C1"/>
+                            <rect x="15" y="95" width="30" height="10" rx="5" fill="#0040C1"/>
+                            <rect x="135" y="95" width="30" height="10" rx="5" fill="#0040C1"/>
+                            <g transform="rotate(45 90 100)">
+                                <rect x="85" y="25" width="10" height="30" rx="5" fill="#0040C1"/>
+                                <rect x="85" y="145" width="10" height="30" rx="5" fill="#0040C1"/>
+                                <rect x="15" y="95" width="30" height="10" rx="5" fill="#0040C1"/>
+                                <rect x="135" y="95" width="30" height="10" rx="5" fill="#0040C1"/>
+                            </g>
+                            <!-- Metallic Silver Shield Curve Divider -->
+                            <path d="M 125 35 Q 155 100 125 165 L 140 160 Q 170 100 140 40 Z" fill="url(#silverGradient)" stroke="#94A3B8" stroke-width="1"/>
+                            <defs>
+                                <linearGradient id="silverGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#E2E8F0" />
+                                    <stop offset="50%" stop-color="#94A3B8" />
+                                    <stop offset="100%" stop-color="#64748B" />
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                    </div>
+
+                    <!-- Brand Name & Requested Subtitle -->
+                    <div class="flex flex-col justify-center">
+                        <div class="flex items-baseline">
+                            <span class="text-2xl sm:text-3xl font-black tracking-tight text-brand-navy">DIVICOM</span>
+                        </div>
+                        <span class="text-xs sm:text-sm font-extrabold text-brand-blue tracking-wide uppercase">Global Services</span>
+                        <!-- Required Subtitle under logo -->
+                        <div class="text-[10px] sm:text-[11px] font-semibold text-slate-600 tracking-tight mt-0.5 border-t border-slate-200 pt-0.5">
+                            | Oil and Gas | Civil & Building Construction | Project Management
+                        </div>
+                    </div>
+                </a>
+
+                <!-- DESKTOP MULTI-PAGE TAB NAVIGATION -->
+                <nav class="hidden lg:flex items-center gap-6 text-sm font-semibold text-slate-700">
+                    <button onclick="switchTab('home')" id="nav-home" class="nav-link py-2 hover:text-brand-blue transition-colors nav-active">Home</button>
+                    <button onclick="switchTab('about')" id="nav-about" class="nav-link py-2 hover:text-brand-blue transition-colors">About Us</button>
+                    <button onclick="switchTab('services')" id="nav-services" class="nav-link py-2 hover:text-brand-blue transition-colors">Services</button>
+                    <button onclick="switchTab('ghs')" id="nav-ghs" class="nav-link py-2 hover:text-brand-blue transition-colors flex items-center gap-1.5">
+                        <span class="px-1.5 py-0.5 rounded bg-blue-100 text-brand-blue text-[10px] font-black uppercase">GHS</span>
+                        System Solutions
+                    </button>
+                    <button onclick="switchTab('projects')" id="nav-projects" class="nav-link py-2 hover:text-brand-blue transition-colors">Projects & References</button>
+                    <button onclick="switchTab('contact')" id="nav-contact" class="px-5 py-2.5 rounded-lg bg-brand-blue hover:bg-brand-navy text-white font-bold transition-all shadow-md shadow-blue-900/20">
+                        Contact Us
+                    </button>
+                </nav>
+
+                <!-- MOBILE HAMBURGER MENU BUTTON -->
+                <button id="mobileMenuBtn" class="lg:hidden text-slate-700 hover:text-brand-blue text-2xl p-2">
+                    <i class="fa-solid fa-bars" id="menuIcon"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- MOBILE NAVIGATION DROPDOWN -->
+        <div id="mobileMenu" class="hidden lg:hidden bg-slate-900 text-white px-6 pt-4 pb-6 space-y-3 border-t border-slate-800">
+            <button onclick="switchTab('home')" class="block w-full text-left py-2 text-slate-200 font-semibold hover:text-blue-400">Home</button>
+            <button onclick="switchTab('about')" class="block w-full text-left py-2 text-slate-200 font-semibold hover:text-blue-400">About Us</button>
+            <button onclick="switchTab('services')" class="block w-full text-left py-2 text-slate-200 font-semibold hover:text-blue-400">Services</button>
+            <button onclick="switchTab('ghs')" class="block w-full text-left py-2 text-slate-200 font-semibold hover:text-blue-400">GHS System Solutions</button>
+            <button onclick="switchTab('projects')" class="block w-full text-left py-2 text-slate-200 font-semibold hover:text-blue-400">Projects & Worldwide References</button>
+            <button onclick="switchTab('contact')" class="block w-full text-center mt-3 py-3 rounded-lg bg-brand-blue hover:bg-blue-600 text-white font-bold">Contact Us</button>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT CONTAINER FOR TAB PAGES -->
+    <main class="flex-grow">
+
+        <!-- ==================== TAB 1: HOME PAGE ==================== -->
+        <div id="page-home" class="tab-page">
+            <!-- Hero Section -->
+            <section class="hero-bg text-white py-24 lg:py-32 relative overflow-hidden">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                    <div class="grid lg:grid-cols-12 gap-12 items-center">
+                        <div class="lg:col-span-8 space-y-6">
+                            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-blue-300 text-xs font-bold uppercase tracking-wider">
+                                <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                                Global Engineering & Serial Construction Leadership
+                            </div>
+                            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black leading-tight tracking-tight">
+                                High-Performance <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-sky-200 to-slate-200">Infrastructure & Energy</span> Solutions
+                            </h1>
+                            <p class="text-slate-200 text-lg leading-relaxed max-w-2xl">
+                                Divicom Global Services leads the industry in Oil & Gas engineering, civil infrastructure construction, and turnkey project management—empowered by our strategic partnership with <strong>GHS (Global Housing Solutions)</strong> for patented rapid serial building technologies.
+                            </p>
+                            <div class="flex flex-wrap items-center gap-4 pt-4">
+                                <button onclick="switchTab('ghs')" class="px-7 py-4 rounded-xl bg-brand-blue hover:bg-blue-600 text-white font-bold transition-all shadow-lg shadow-blue-900/40 flex items-center gap-2">
+                                    Explore GHS Technology <i class="fa-solid fa-arrow-right text-xs"></i>
+                                </button>
+                                <button onclick="switchTab('contact')" class="px-7 py-4 rounded-xl bg-white/10 hover:bg-white/20 text-white border border-white/30 font-bold backdrop-blur-md transition-all">
+                                    Request Project Consultation
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Highlights Card -->
+                        <div class="lg:col-span-4">
+                            <div class="glass-card text-slate-900 p-8 rounded-2xl space-y-6 shadow-2xl border-2 border-white">
+                                <div class="border-b border-slate-200 pb-4">
+                                    <span class="text-xs font-extrabold text-brand-blue uppercase tracking-widest">Divicom Advantage</span>
+                                    <h3 class="text-xl font-extrabold text-brand-navy mt-1">Why Leading Energy & Civil Clients Partner With Us</h3>
+                                </div>
+                                <div class="space-y-4 text-sm">
+                                    <div class="flex items-start gap-3">
+                                        <div class="w-8 h-8 rounded-lg bg-blue-100 text-brand-blue flex items-center justify-center shrink-0 font-bold">1</div>
+                                        <div>
+                                            <strong class="text-slate-900 block">Oil & Gas Expertise</strong>
+                                            <span class="text-slate-600 text-xs">Full procurement, pipeline, and structural installation capabilities.</span>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start gap-3">
+                                        <div class="w-8 h-8 rounded-lg bg-blue-100 text-brand-blue flex items-center justify-center shrink-0 font-bold">2</div>
+                                        <div>
+                                            <strong class="text-slate-900 block">Patented GHS Serial System</strong>
+                                            <span class="text-slate-600 text-xs">1 housing unit per week, 80+ years lifespan, hurricane resilient.</span>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start gap-3">
+                                        <div class="w-8 h-8 rounded-lg bg-blue-100 text-brand-blue flex items-center justify-center shrink-0 font-bold">3</div>
+                                        <div>
+                                            <strong class="text-slate-900 block">Global Execution Track Record</strong>
+                                            <span class="text-slate-600 text-xs">Over 400,000+ GHS buildings executed worldwide across 20+ countries.</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Core Pillar Services Brief -->
+            <section class="py-20 bg-white">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center max-w-3xl mx-auto space-y-3">
+                        <span class="text-brand-blue font-extrabold text-xs uppercase tracking-widest bg-blue-50 px-3 py-1 rounded-full border border-blue-200">Our Core Focus Areas</span>
+                        <h2 class="text-3xl sm:text-4xl font-black text-brand-navy">End-to-End Engineering & Construction</h2>
+                        <p class="text-slate-600">Combining traditional heavy civil construction with revolutionary modular technology.</p>
+                    </div>
+
+                    <div class="grid md:grid-cols-3 gap-8 mt-12">
+                        <!-- Pillar 1 -->
+                        <div class="bg-slate-50 rounded-2xl p-8 border border-slate-200 hover:border-brand-blue hover:shadow-xl transition-all group">
+                            <div class="w-14 h-14 rounded-xl bg-brand-navy text-white flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
+                                <i class="fa-solid fa-oil-well"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-brand-navy mb-2">Oil & Gas Services</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                                Offshore & onshore facility engineering, pipeline installation, flowline maintenance, structural integrity audits, and heavy equipment procurement.
+                            </p>
+                            <button onclick="switchTab('services')" class="text-xs font-bold text-brand-blue hover:text-brand-navy flex items-center gap-1">
+                                Learn More <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                            </button>
+                        </div>
+
+                        <!-- Pillar 2 -->
+                        <div class="bg-slate-50 rounded-2xl p-8 border border-slate-200 hover:border-brand-blue hover:shadow-xl transition-all group">
+                            <div class="w-14 h-14 rounded-xl bg-brand-blue text-white flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
+                                <i class="fa-solid fa-building-user"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-brand-navy mb-2">Civil & Building Construction</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                                Construction of commercial complexes, residential housing developments, high-rise buildings, educational centers, and specialized medical clinics.
+                            </p>
+                            <button onclick="switchTab('services')" class="text-xs font-bold text-brand-blue hover:text-brand-navy flex items-center gap-1">
+                                Learn More <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                            </button>
+                        </div>
+
+                        <!-- Pillar 3 -->
+                        <div class="bg-slate-50 rounded-2xl p-8 border border-slate-200 hover:border-brand-blue hover:shadow-xl transition-all group">
+                            <div class="w-14 h-14 rounded-xl bg-slate-800 text-white flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
+                                <i class="fa-solid fa-chart-line"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-brand-navy mb-2">Project Management</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                                Turnkey EPC project management, cost auditing, strict site safety oversight (HSE), quality assurance, and timeline governance.
+                            </p>
+                            <button onclick="switchTab('services')" class="text-xs font-bold text-brand-blue hover:text-brand-navy flex items-center gap-1">
+                                Learn More <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- GHS Partner Spotlight Banner -->
+            <section class="py-16 bg-slate-900 text-white border-t border-slate-800">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="flex flex-col lg:flex-row items-center justify-between gap-8 bg-gradient-to-r from-brand-navy to-slate-900 p-8 sm:p-12 rounded-3xl border border-blue-900/50">
+                        <div class="space-y-4 lg:max-w-2xl">
+                            <div class="inline-flex items-center gap-2 px-3 py-1 rounded bg-blue-900/60 text-blue-300 text-xs font-bold uppercase">
+                                Patented Technology Partner
+                            </div>
+                            <h3 class="text-2xl sm:text-3xl font-extrabold">Accelerate Construction with GHS ClipPlus.c</h3>
+                            <p class="text-slate-300 text-sm leading-relaxed">
+                                Build durable 80+ year lifespan structures in 1 week per housing unit. Flame retardant, earthquake-proof, and salt-water resistant uPVC-concrete serial system.
+                            </p>
+                        </div>
+                        <div class="shrink-0">
+                            <button onclick="switchTab('ghs')" class="px-8 py-4 rounded-xl bg-white text-brand-navy hover:bg-slate-100 font-extrabold transition-all shadow-xl">
+                                Explore GHS Solutions <i class="fa-solid fa-arrow-right ml-2"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- ==================== TAB 2: ABOUT US PAGE ==================== -->
+        <div id="page-about" class="tab-page hidden">
+            <section class="py-16 bg-brand-navy text-white">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-3">
+                    <h1 class="text-4xl font-black">About Divicom Global Services</h1>
+                    <p class="text-slate-300 max-w-2xl mx-auto text-sm">Engineering excellence, structural reliability, and sustainable innovation in the energy and construction sectors.</p>
+                </div>
+            </section>
+
+            <section class="py-20 bg-white">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+                    <div class="grid lg:grid-cols-2 gap-12 items-center">
+                        <div class="space-y-6">
+                            <span class="text-brand-blue text-xs font-extrabold uppercase tracking-widest bg-blue-50 px-3 py-1 rounded-md">Corporate Identity</span>
+                            <h2 class="text-3xl font-bold text-brand-navy">Who We Are</h2>
+                            <p class="text-slate-600 leading-relaxed text-sm">
+                                <strong>Divicom Global Services</strong> is a premier engineering, procurement, construction, and project management corporation. Founded to address critical infrastructure gaps across the energy and civil building landscapes, we combine deep technical domain knowledge with strategic global partnerships.
+                            </p>
+                            <p class="text-slate-600 leading-relaxed text-sm">
+                                Under our core pillars of <strong>Oil & Gas</strong>, <strong>Civil & Building Construction</strong>, and <strong>Project Management</strong>, we ensure every project delivers maximum ROI, structural resilience, and absolute safety compliance.
+                            </p>
+                        </div>
+                        <div class="relative">
+                            <img src="https://images.unsplash.com/photo-1541888946425-d0fbb186a5b3?auto=format&fit=crop&w=800&q=80" alt="Construction Management" class="rounded-2xl shadow-xl border border-slate-200">
+                        </div>
+                    </div>
+
+                    <!-- Vision & Mission -->
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div class="bg-slate-50 p-8 rounded-2xl border border-slate-200 space-y-3">
+                            <div class="w-12 h-12 rounded-lg bg-brand-blue text-white flex items-center justify-center text-xl font-bold"><i class="fa-solid fa-eye"></i></div>
+                            <h3 class="text-xl font-bold text-brand-navy">Our Vision</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed">To be the preferred global engineering partner recognized for pioneering rapid, sustainable building solutions and maintaining high safety standards across the energy and civil infrastructure sectors.</p>
+                        </div>
+                        <div class="bg-slate-50 p-8 rounded-2xl border border-slate-200 space-y-3">
+                            <div class="w-12 h-12 rounded-lg bg-brand-navy text-white flex items-center justify-center text-xl font-bold"><i class="fa-solid fa-bullseye"></i></div>
+                            <h3 class="text-xl font-bold text-brand-navy">Our Mission</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed">To deliver turnkey engineering and construction projects safely, on time, and within budget using innovative systems like GHS uPVC-concrete technology, empowering communities and energizing industries.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- ==================== TAB 3: SERVICES PAGE ==================== -->
+        <div id="page-services" class="tab-page hidden">
+            <section class="py-16 bg-brand-navy text-white">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-3">
+                    <h1 class="text-4xl font-black">Our Professional Services</h1>
+                    <p class="text-slate-300 max-w-2xl mx-auto text-sm">Comprehensive engineering, procurement, construction, and supervisory expertise.</p>
+                </div>
+            </section>
+
+            <section class="py-20 bg-slate-50">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+                    
+                    <!-- Service 1: Oil & Gas -->
+                    <div class="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm grid lg:grid-cols-12 gap-8 items-center">
+                        <div class="lg:col-span-4">
+                            <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=600&q=80" alt="Oil & Gas Infrastructure" class="rounded-xl w-full h-64 object-cover">
+                        </div>
+                        <div class="lg:col-span-8 space-y-4">
+                            <div class="inline-flex items-center gap-2 px-3 py-1 rounded bg-blue-100 text-brand-blue text-xs font-bold uppercase">
+                                Energy Sector
+                            </div>
+                            <h3 class="text-2xl font-bold text-brand-navy">Oil & Gas Engineering & Field Support</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed">
+                                Divicom provides specialized engineering procurement, installation, and asset maintenance for onshore and offshore energy operations.
+                            </p>
+                            <div class="grid sm:grid-cols-2 gap-3 text-xs font-semibold text-slate-700">
+                                <div class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-blue"></i> Flowline & Pipeline Installation</div>
+                                <div class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-blue"></i> Plant Facility Maintenance</div>
+                                <div class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-blue"></i> Non-Destructive Testing (NDT)</div>
+                                <div class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-blue"></i> Heavy Equipment Procurement</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Service 2: Civil & Building -->
+                    <div class="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm grid lg:grid-cols-12 gap-8 items-center">
+                        <div class="lg:col-span-4">
+                            <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=600&q=80" alt="Civil Construction" class="rounded-xl w-full h-64 object-cover">
+                        </div>
+                        <div class="lg:col-span-8 space-y-4">
+                            <div class="inline-flex items-center gap-2 px-3 py-1 rounded bg-slate-100 text-slate-800 text-xs font-bold uppercase">
+                                Civil Infrastructure
+                            </div>
+                            <h3 class="text-2xl font-bold text-brand-navy">Civil & Building Construction</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed">
+                                From large-scale commercial developments to institutional facilities, we construct resilient, high-grade structures with precision.
+                            </p>
+                            <div class="grid sm:grid-cols-2 gap-3 text-xs font-semibold text-slate-700">
+                                <div class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-blue"></i> Commercial High-Rise Buildings</div>
+                                <div class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-blue"></i> Residential & Community Hubs</div>
+                                <div class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-blue"></i> Schools, Hospitals & Clinics</div>
+                                <div class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-blue"></i> Structural Concrete & Steelwork</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Service 3: Project Management -->
+                    <div class="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm grid lg:grid-cols-12 gap-8 items-center">
+                        <div class="lg:col-span-4">
+                            <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=600&q=80" alt="Project Management" class="rounded-xl w-full h-64 object-cover">
+                        </div>
+                        <div class="lg:col-span-8 space-y-4">
+                            <div class="inline-flex items-center gap-2 px-3 py-1 rounded bg-emerald-100 text-emerald-800 text-xs font-bold uppercase">
+                                Governance & Supervision
+                            </div>
+                            <h3 class="text-2xl font-bold text-brand-navy">Turnkey Project Management (EPC)</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed">
+                                End-to-end supervisory control ensuring seamless integration across procurement, execution, quality audits, and environmental compliance.
+                            </p>
+                            <div class="grid sm:grid-cols-2 gap-3 text-xs font-semibold text-slate-700">
+                                <div class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-blue"></i> QA/QC Inspections & Auditing</div>
+                                <div class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-blue"></i> Budget & Timeline Governance</div>
+                                <div class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-blue"></i> Environmental & Regulatory HSE</div>
+                                <div class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-blue"></i> Site Risk Management</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- ==================== TAB 4: SYSTEM SOLUTIONS & GHS PARTNERSHIP ==================== -->
+        <div id="page-ghs" class="tab-page hidden">
+            <!-- GHS Header -->
+            <section class="ghs-bg text-white py-20">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/20 text-blue-300 text-xs font-bold uppercase">
+                        Strategic Partnership: Divicom & Global Housing Solutions (Austria)
+                    </div>
+                    <h1 class="text-4xl sm:text-5xl font-black">GHS Patented Serial Building Systems</h1>
+                    <p class="text-slate-200 max-w-3xl text-base leading-relaxed">
+                        Revolutionizing housing and public infrastructure construction across the globe with patented uPVC-concrete technologies designed for speed, durability, and cost-efficiency.
+                    </p>
+                </div>
+            </section>
+
+            <!-- ClipPlus 3-Step Process -->
+            <section class="py-20 bg-white">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center max-w-3xl mx-auto space-y-3">
+                        <span class="text-brand-blue font-extrabold text-xs uppercase tracking-widest bg-blue-50 px-3 py-1 rounded-full border border-blue-200">Patented Innovation</span>
+                        <h2 class="text-3xl font-black text-brand-navy">The ClipPlus.c Technology System</h2>
+                        <p class="text-slate-600 text-sm">"Clip, Fill & Connect" — High-precision serial construction simplified into 3 steps.</p>
+                    </div>
+
+                    <div class="grid md:grid-cols-3 gap-8 mt-12">
+                        <!-- Step 1 -->
+                        <div class="bg-slate-50 p-8 rounded-2xl border-2 border-slate-200 relative space-y-4">
+                            <span class="absolute top-4 right-4 text-3xl font-black text-slate-300">01</span>
+                            <div class="w-12 h-12 rounded-xl bg-brand-blue text-white flex items-center justify-center font-bold text-xl"><i class="fa-solid fa-puzzle-piece"></i></div>
+                            <h3 class="text-xl font-bold text-brand-navy">1. Easy Clipping System</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed">
+                                Flexible combination of patented uPVC profiles that snap together effortlessly. Eliminates the need for plastering or painting entirely.
+                            </p>
+                        </div>
+
+                        <!-- Step 2 -->
+                        <div class="bg-slate-50 p-8 rounded-2xl border-2 border-slate-200 relative space-y-4">
+                            <span class="absolute top-4 right-4 text-3xl font-black text-slate-300">02</span>
+                            <div class="w-12 h-12 rounded-xl bg-brand-blue text-white flex items-center justify-center font-bold text-xl"><i class="fa-solid fa-plug"></i></div>
+                            <h3 class="text-xl font-bold text-brand-navy">2. Simple Connections</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed">
+                                Integrated preinstalled conduits for water, sewage, and electricity. No wall slitting, chiselling, or messy site trenching required.
+                            </p>
+                        </div>
+
+                        <!-- Step 3 -->
+                        <div class="bg-slate-50 p-8 rounded-2xl border-2 border-slate-200 relative space-y-4">
+                            <span class="absolute top-4 right-4 text-3xl font-black text-slate-300">03</span>
+                            <div class="w-12 h-12 rounded-xl bg-brand-blue text-white flex items-center justify-center font-bold text-xl"><i class="fa-solid fa-fill-drip"></i></div>
+                            <h3 class="text-xl font-bold text-brand-navy">3. Local Material Infill</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed">
+                                Profiles are filled with locally-sourced building materials (reinforced concrete, sand, or recycled aggregate) matching regional standards.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- GHS Key Benefits Breakdown (Lean, Smart, Sustainable) -->
+            <section class="py-20 bg-slate-900 text-white">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center max-w-3xl mx-auto mb-16 space-y-2">
+                        <span class="text-sky-400 font-extrabold text-xs uppercase tracking-widest">Unrivalled Engineering Metrics</span>
+                        <h2 class="text-3xl font-black">Key Solution Benefits</h2>
+                    </div>
+
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <!-- Lean -->
+                        <div class="bg-slate-800/80 p-8 rounded-2xl border border-slate-700 space-y-4">
+                            <div class="w-12 h-12 rounded-xl bg-sky-500 text-slate-950 flex items-center justify-center text-xl font-bold"><i class="fa-solid fa-bolt"></i></div>
+                            <h3 class="text-xl font-bold text-sky-400">LEAN CONSTRUCTION</h3>
+                            <ul class="text-slate-300 text-xs space-y-2.5">
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-sky-400"></i> <strong>Rapid Speed:</strong> 1 housing unit built per week</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-sky-400"></i> No heavy cranes or complex equipment needed</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-sky-400"></i> Reduced overall planning & construction costs</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-sky-400"></i> Consistent factory-controlled structural quality</li>
+                            </ul>
+                        </div>
+
+                        <!-- Smart -->
+                        <div class="bg-slate-800/80 p-8 rounded-2xl border border-slate-700 space-y-4">
+                            <div class="w-12 h-12 rounded-xl bg-amber-500 text-slate-950 flex items-center justify-center text-xl font-bold"><i class="fa-solid fa-shield"></i></div>
+                            <h3 class="text-xl font-bold text-amber-400">SMART & RESILIENT</h3>
+                            <ul class="text-slate-300 text-xs space-y-2.5">
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-400"></i> <strong>80+ Years</strong> proven structural lifespan</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-400"></i> Solar-reflecting & Flame retardant</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-400"></i> Salt-water resistant (ideal for coastal sites)</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-400"></i> Resilient to hurricanes, earthquakes & floods</li>
+                            </ul>
+                        </div>
+
+                        <!-- Sustainable -->
+                        <div class="bg-slate-800/80 p-8 rounded-2xl border border-slate-700 space-y-4">
+                            <div class="w-12 h-12 rounded-xl bg-emerald-500 text-slate-950 flex items-center justify-center text-xl font-bold"><i class="fa-solid fa-leaf"></i></div>
+                            <h3 class="text-xl font-bold text-emerald-400">SUSTAINABLE IMPACT</h3>
+                            <ul class="text-slate-300 text-xs space-y-2.5">
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Empowers unskilled local workforce</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Seamless integration with local supply chains</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Tailored to regional architectural layouts & colors</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Reduced carbon footprint & zero site waste</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- DYNAMIC SAVINGS & TIMELINE ESTIMATOR WIDGET -->
+            <section class="py-20 bg-slate-50 border-t border-slate-200">
+                <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="bg-white rounded-3xl p-8 sm:p-12 shadow-xl border border-slate-200 space-y-8">
+                        <div class="text-center space-y-2">
+                            <span class="px-3 py-1 bg-blue-100 text-brand-blue text-xs font-bold uppercase rounded-full">Interactive Tool</span>
+                            <h3 class="text-2xl sm:text-3xl font-extrabold text-brand-navy">GHS vs. Traditional Construction Calculator</h3>
+                            <p class="text-slate-600 text-xs">Estimate your timeline and cost savings when using Divicom's GHS ClipPlus system.</p>
+                        </div>
+
+                        <div class="grid md:grid-cols-2 gap-8 items-center pt-4">
+                            <div class="space-y-6">
+                                <div>
+                                    <label class="block text-xs font-bold text-slate-700 mb-2">Number of Housing / Facility Units:</label>
+                                    <input type="range" id="unitsInput" min="5" max="200" value="25" class="w-full accent-brand-blue cursor-pointer">
+                                    <div class="flex justify-between text-xs font-bold text-slate-600 mt-1">
+                                        <span>5 Units</span>
+                                        <span id="unitsValue" class="text-brand-blue font-black text-sm">25 Units</span>
+                                        <span>200 Units</span>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <label class="block text-xs font-bold text-slate-700 mb-2">Target Building Type:</label>
+                                    <select id="buildingTypeSelect" class="w-full p-3 rounded-xl bg-slate-50 border border-slate-300 text-xs font-semibold text-slate-800">
+                                        <option value="residential">Residential Housing / Housing Estate</option>
+                                        <option value="school">Public School / Clinic Infrastructure</option>
+                                        <option value="office">Commercial Office / Camp Lodging</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- Calculation Result Card -->
+                            <div class="bg-brand-navy text-white p-6 rounded-2xl space-y-6 shadow-inner">
+                                <h4 class="text-sm font-bold border-b border-blue-800 pb-2 text-sky-300">Projected Savings & Efficiency</h4>
+                                
+                                <div class="grid grid-cols-2 gap-4">
+                                    <div>
+                                        <span class="text-[10px] uppercase text-slate-300 block">GHS Build Time</span>
+                                        <strong id="ghsTime" class="text-2xl font-black text-emerald-400">3.5 Weeks</strong>
+                                        <span class="text-[10px] text-slate-400 block mt-0.5">vs <span id="tradTime">25 Weeks</span> (Traditional)</span>
+                                    </div>
+                                    <div>
+                                        <span class="text-[10px] uppercase text-slate-300 block">Est. Cost Reduction</span>
+                                        <strong id="costSaving" class="text-2xl font-black text-sky-400">30% Savings</strong>
+                                        <span class="text-[10px] text-slate-400 block mt-0.5">On labor & heavy tools</span>
+                                    </div>
+                                </div>
+
+                                <div class="pt-2 border-t border-blue-800/80 text-[11px] text-slate-300 flex items-center gap-2">
+                                    <i class="fa-solid fa-shield-cat text-amber-400"></i>
+                                    <span>Includes full 80+ years durability guarantee.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- ==================== TAB 5: PROJECTS & WORLDWIDE REFERENCES ==================== -->
+        <div id="page-projects" class="tab-page hidden">
+            <section class="py-16 bg-brand-navy text-white">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-3">
+                    <h1 class="text-4xl font-black">Worldwide Projects & References</h1>
+                    <p class="text-slate-300 max-w-2xl mx-auto text-sm">Over 400,000+ GHS serial building units & major Divicom engineering executions worldwide.</p>
+                </div>
+            </section>
+
+            <section class="py-20 bg-slate-50">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    
+                    <!-- Portfolio Filtering Tabs -->
+                    <div class="flex flex-wrap justify-center gap-2 mb-12">
+                        <button onclick="filterPortfolio('all')" class="port-filter active px-5 py-2.5 rounded-xl text-xs font-bold bg-brand-blue text-white transition-all">All References</button>
+                        <button onclick="filterPortfolio('housing')" class="port-filter px-5 py-2.5 rounded-xl text-xs font-bold bg-white text-slate-700 hover:bg-slate-100 border border-slate-300 transition-all">Housing & Settlements</button>
+                        <button onclick="filterPortfolio('public')" class="port-filter px-5 py-2.5 rounded-xl text-xs font-bold bg-white text-slate-700 hover:bg-slate-100 border border-slate-300 transition-all">Schools & Clinics</button>
+                        <button onclick="filterPortfolio('industrial')" class="port-filter px-5 py-2.5 rounded-xl text-xs font-bold bg-white text-slate-700 hover:bg-slate-100 border border-slate-300 transition-all">Industrial & Oil Gas</button>
+                    </div>
+
+                    <!-- Gallery Grid -->
+                    <div class="grid md:grid-cols-3 gap-8" id="portfolioGrid">
+                        
+                        <!-- Reference 1: Venezuela Settlement -->
+                        <div class="port-card bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm" data-category="housing">
+                            <img src="https://images.unsplash.com/photo-1541888946425-d0fbb186a5b3?auto=format&fit=crop&w=600&q=80" alt="Housing Settlement" class="h-48 w-full object-cover">
+                            <div class="p-6 space-y-2">
+                                <div class="flex justify-between items-center">
+                                    <span class="text-[10px] font-bold text-brand-blue bg-blue-50 px-2.5 py-0.5 rounded uppercase">Venezuela</span>
+                                    <span class="text-xs font-mono text-slate-400">GHS Solution</span>
+                                </div>
+                                <h4 class="font-bold text-brand-navy">Coromoto Housing Settlement</h4>
+                                <p class="text-xs text-slate-600">Large-scale serial residential community built with uPVC-concrete system.</p>
+                            </div>
+                        </div>
+
+                        <!-- Reference 2: Peru Accommodation -->
+                        <div class="port-card bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm" data-category="housing">
+                            <img src="https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?auto=format&fit=crop&w=600&q=80" alt="Peru Settlement" class="h-48 w-full object-cover">
+                            <div class="p-6 space-y-2">
+                                <div class="flex justify-between items-center">
+                                    <span class="text-[10px] font-bold text-brand-blue bg-blue-50 px-2.5 py-0.5 rounded uppercase">Peru</span>
+                                    <span class="text-xs font-mono text-slate-400">GHS Solution</span>
+                                </div>
+                                <h4 class="font-bold text-brand-navy">Chincha Private Serial Housing</h4>
+                                <p class="text-xs text-slate-600">Complete community layout with playground & sustainable infrastructure.</p>
+                            </div>
+                        </div>
+
+                        <!-- Reference 3: Rwanda Technical School -->
+                        <div class="port-card bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm" data-category="public">
+                            <img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&w=600&q=80" alt="Technical School" class="h-48 w-full object-cover">
+                            <div class="p-6 space-y-2">
+                                <div class="flex justify-between items-center">
+                                    <span class="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-2.5 py-0.5 rounded uppercase">Rwanda (Kigali)</span>
+                                    <span class="text-xs font-mono text-slate-400">Public Infra</span>
+                                </div>
+                                <h4 class="font-bold text-brand-navy">Technical School Complex</h4>
+                                <p class="text-xs text-slate-600">Educational campus built to support regional technical training.</p>
+                            </div>
+                        </div>
+
+                        <!-- Reference 4: South Africa Medical Centre -->
+                        <div class="port-card bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm" data-category="public">
+                            <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=600&q=80" alt="Medical Centre" class="h-48 w-full object-cover">
+                            <div class="p-6 space-y-2">
+                                <div class="flex justify-between items-center">
+                                    <span class="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-2.5 py-0.5 rounded uppercase">South Africa</span>
+                                    <span class="text-xs font-mono text-slate-400">Healthcare</span>
+                                </div>
+                                <h4 class="font-bold text-brand-navy">Johannesburg Medical Centre</h4>
+                                <p class="text-xs text-slate-600">Rapid healthcare facility construction ensuring high hygienic standards.</p>
+                            </div>
+                        </div>
+
+                        <!-- Reference 5: Turn-Key Plant (Venezuela / Austria) -->
+                        <div class="port-card bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm" data-category="industrial">
+                            <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=600&q=80" alt="Turnkey Plant" class="h-48 w-full object-cover">
+                            <div class="p-6 space-y-2">
+                                <div class="flex justify-between items-center">
+                                    <span class="text-[10px] font-bold text-amber-700 bg-amber-50 px-2.5 py-0.5 rounded uppercase">Global Plant</span>
+                                    <span class="text-xs font-mono text-slate-400">Turnkey Facility</span>
+                                </div>
+                                <h4 class="font-bold text-brand-navy">GHS Extrusion & Profile Production Plant</h4>
+                                <p class="text-xs text-slate-600">Turnkey manufacturing plant for continuous uPVC wall panel extrusion.</p>
+                            </div>
+                        </div>
+
+                        <!-- Reference 6: Offshore Oil Facility -->
+                        <div class="port-card bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm" data-category="industrial">
+                            <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=600&q=80" alt="Oil Facility" class="h-48 w-full object-cover">
+                            <div class="p-6 space-y-2">
+                                <div class="flex justify-between items-center">
+                                    <span class="text-[10px] font-bold text-amber-700 bg-amber-50 px-2.5 py-0.5 rounded uppercase">Oil & Gas</span>
+                                    <span class="text-xs font-mono text-slate-400">Divicom Execution</span>
+                                </div>
+                                <h4 class="font-bold text-brand-navy">Coastal Flowline Integrity Upgrade</h4>
+                                <p class="text-xs text-slate-600">Onshore pipeline reinforcement and quality assurance supervision.</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- ==================== TAB 6: CONTACT US PAGE ==================== -->
+        <div id="page-contact" class="tab-page hidden">
+            <section class="py-16 bg-brand-navy text-white">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-3">
+                    <h1 class="text-4xl font-black">Contact Divicom Global Services</h1>
+                    <p class="text-slate-300 max-w-2xl mx-auto text-sm">Connect with our engineering and project teams for inquiries or site quotes.</p>
+                </div>
+            </section>
+
+            <section class="py-20 bg-white">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="grid lg:grid-cols-12 gap-12">
+                        
+                        <!-- Contact Info -->
+                        <div class="lg:col-span-5 space-y-8">
+                            <div>
+                                <h3 class="text-2xl font-bold text-brand-navy">Head Office & Inquiries</h3>
+                                <p class="text-slate-600 text-sm mt-2">Submit your project details or visit our corporate complex for partnership discussions.</p>
+                            </div>
+
+                            <div class="space-y-6">
+                                <div class="flex items-start gap-4">
+                                    <div class="w-12 h-12 rounded-xl bg-blue-50 text-brand-blue flex items-center justify-center shrink-0 font-bold text-lg"><i class="fa-solid fa-location-dot"></i></div>
+                                    <div>
+                                        <h4 class="font-bold text-slate-900 text-sm">Corporate Office</h4>
+                                        <p class="text-xs text-slate-600 mt-0.5">Divicom Global Services Complex, Lagos & Port Harcourt Industrial Zones, Nigeria.</p>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-start gap-4">
+                                    <div class="w-12 h-12 rounded-xl bg-blue-50 text-brand-blue flex items-center justify-center shrink-0 font-bold text-lg"><i class="fa-solid fa-envelope"></i></div>
+                                    <div>
+                                        <h4 class="font-bold text-slate-900 text-sm">Official Email</h4>
+                                        <p class="text-xs text-slate-600 mt-0.5">info@divicomglobal.com</p>
+                                        <p class="text-xs text-slate-600">projects@divicomglobal.com</p>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-start gap-4">
+                                    <div class="w-12 h-12 rounded-xl bg-blue-50 text-brand-blue flex items-center justify-center shrink-0 font-bold text-lg"><i class="fa-solid fa-phone"></i></div>
+                                    <div>
+                                        <h4 class="font-bold text-slate-900 text-sm">Phone Contacts</h4>
+                                        <p class="text-xs text-slate-600 mt-0.5">+234 (0) 800 DIVICOM</p>
+                                        <p class="text-xs text-slate-600">+234 (0) 803 000 0000</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Form -->
+                        <div class="lg:col-span-7">
+                            <div class="bg-slate-50 p-8 rounded-2xl border border-slate-200">
+                                <h3 class="text-xl font-bold text-brand-navy mb-4">Send a Direct Inquiry</h3>
+                                <div id="formAlert" class="hidden mb-4 p-4 rounded-xl text-xs font-bold"></div>
+                                
+                                <form id="contactForm" class="space-y-4">
+                                    <div class="grid sm:grid-cols-2 gap-4">
+                                        <div>
+                                            <label class="block text-xs font-bold text-slate-700 mb-1">Full Name *</label>
+                                            <input type="text" required placeholder="John Doe" class="w-full p-3 rounded-lg bg-white border border-slate-300 text-xs focus:outline-none focus:border-brand-blue">
+                                        </div>
+                                        <div>
+                                            <label class="block text-xs font-bold text-slate-700 mb-1">Company / Organization *</label>
+                                            <input type="text" required placeholder="Company Ltd" class="w-full p-3 rounded-lg bg-white border border-slate-300 text-xs focus:outline-none focus:border-brand-blue">
+                                        </div>
+                                    </div>
+
+                                    <div class="grid sm:grid-cols-2 gap-4">
+                                        <div>
+                                            <label class="block text-xs font-bold text-slate-700 mb-1">Email Address *</label>
+                                            <input type="email" required placeholder="john@domain.com" class="w-full p-3 rounded-lg bg-white border border-slate-300 text-xs focus:outline-none focus:border-brand-blue">
+                                        </div>
+                                        <div>
+                                            <label class="block text-xs font-bold text-slate-700 mb-1">Primary Interest *</label>
+                                            <select required class="w-full p-3 rounded-lg bg-white border border-slate-300 text-xs focus:outline-none focus:border-brand-blue">
+                                                <option value="" disabled selected>Select service focus</option>
+                                                <option value="ghs">GHS Rapid Housing / System Building</option>
+                                                <option value="oilgas">Oil & Gas Services</option>
+                                                <option value="civil">Civil & Building Construction</option>
+                                                <option value="pm">Project Management</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <label class="block text-xs font-bold text-slate-700 mb-1">Project Scope & Location *</label>
+                                        <textarea rows="4" required placeholder="Describe target site, number of units, or service requirements..." class="w-full p-3 rounded-lg bg-white border border-slate-300 text-xs focus:outline-none focus:border-brand-blue"></textarea>
+                                    </div>
+
+                                    <button type="submit" class="w-full py-4 rounded-xl bg-brand-blue hover:bg-brand-navy text-white font-bold text-xs uppercase tracking-wider transition-all shadow-md">
+                                        Submit Inquiry
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+        </div>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-900 text-slate-400 py-12 border-t border-slate-800 text-xs">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <!-- Col 1 -->
+                <div class="space-y-3">
+                    <div class="text-white font-black text-lg">DIVICOM GLOBAL SERVICES</div>
+                    <p class="text-slate-400 text-xs leading-relaxed">
+                        Leading provider of Oil & Gas engineering support, Civil Building Construction, and patented GHS rapid serial housing solutions.
+                    </p>
+                </div>
+                <!-- Col 2 -->
+                <div class="space-y-2">
+                    <h5 class="text-white font-bold">Quick Links</h5>
+                    <ul class="space-y-1">
+                        <li><button onclick="switchTab('about')" class="hover:text-white">About Us</button></li>
+                        <li><button onclick="switchTab('services')" class="hover:text-white">Our Services</button></li>
+                        <li><button onclick="switchTab('ghs')" class="hover:text-white">GHS System Solutions</button></li>
+                        <li><button onclick="switchTab('projects')" class="hover:text-white">Global Portfolio</button></li>
+                    </ul>
+                </div>
+                <!-- Col 3 -->
+                <div class="space-y-2">
+                    <h5 class="text-white font-bold">Core Capabilities</h5>
+                    <ul class="space-y-1">
+                        <li>Oil & Gas Field Services</li>
+                        <li>Civil & Serial Construction</li>
+                        <li>ClipPlus.c Rapid Building</li>
+                        <li>Turnkey Project Management</li>
+                    </ul>
+                </div>
+                <!-- Col 4 -->
+                <div class="space-y-2">
+                    <h5 class="text-white font-bold">Follow Us</h5>
+                    <div class="flex items-center gap-3 pt-1">
+                        <a href="https://instagram.com/divicomltd" target="_blank" class="w-8 h-8 rounded bg-slate-800 hover:bg-brand-blue text-white flex items-center justify-center transition-colors">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a href="#" class="w-8 h-8 rounded bg-slate-800 hover:bg-brand-blue text-white flex items-center justify-center transition-colors">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="w-8 h-8 rounded bg-slate-800 hover:bg-brand-blue text-white flex items-center justify-center transition-colors">
+                            <i class="fa-brands fa-x-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pt-8 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px]">
+                <p>&copy; <span id="year"></span> Divicom Global Services. All Rights Reserved.</p>
+                <div class="flex gap-4">
+                    <a href="#" class="hover:text-white">HSE Policy</a>
+                    <a href="#" class="hover:text-white">Terms & Conditions</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- INTERACTIVE SCRIPT LOGIC -->
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Multi-Page Tab Switching Logic
+        function switchTab(tabId) {
+            // Hide all tab pages
+            const pages = document.querySelectorAll('.tab-page');
+            pages.forEach(p => p.classList.add('hidden'));
+
+            // Remove active style from desktop nav links
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(l => l.classList.remove('nav-active'));
+
+            // Show selected page
+            const activePage = document.getElementById('page-' + tabId);
+            if (activePage) activePage.classList.remove('hidden');
+
+            // Highlight nav button if applicable
+            const activeNav = document.getElementById('nav-' + tabId);
+            if (activeNav) activeNav.classList.add('nav-active');
+
+            // Close mobile menu
+            document.getElementById('mobileMenu').classList.add('hidden');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Portfolio Filtering Logic
+        function filterPortfolio(category) {
+            const cards = document.querySelectorAll('.port-card');
+            const btns = document.querySelectorAll('.port-filter');
+
+            btns.forEach(b => {
+                b.classList.remove('bg-brand-blue', 'text-white');
+                b.classList.add('bg-white', 'text-slate-700');
+            });
+
+            event.target.classList.remove('bg-white', 'text-slate-700');
+            event.target.classList.add('bg-brand-blue', 'text-white');
+
+            cards.forEach(card => {
+                if (category === 'all' || card.getAttribute('data-category') === category) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // Dynamic GHS Calculator Engine
+        const unitsInput = document.getElementById('unitsInput');
+        const unitsValue = document.getElementById('unitsValue');
+        const ghsTime = document.getElementById('ghsTime');
+        const tradTime = document.getElementById('tradTime');
+        const buildingTypeSelect = document.getElementById('buildingTypeSelect');
+
+        function updateCalculator() {
+            const units = parseInt(unitsInput.value);
+            unitsValue.textContent = `${units} Units`;
+
+            // Time calculation: 1 week per unit with parallel team scaling
+            const ghsWeeks = (units * 0.25).toFixed(1);
+            const tradWeeks = (units * 1.5).toFixed(0);
+
+            ghsTime.textContent = `${ghsWeeks} Weeks`;
+            tradTime.textContent = `${tradWeeks} Weeks`;
+        }
+
+        if (unitsInput) {
+            unitsInput.addEventListener('input', updateCalculator);
+            buildingTypeSelect.addEventListener('change', updateCalculator);
+        }
+
+        // Contact Form alert simulation
+        const contactForm = document.getElementById('contactForm');
+        const formAlert = document.getElementById('formAlert');
+
+        if (contactForm) {
+            contactForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                formAlert.classList.remove('hidden', 'bg-red-100', 'text-red-800');
+                formAlert.classList.add('bg-emerald-100', 'text-emerald-800');
+                formAlert.innerHTML = '<i class="fa-solid fa-circle-check mr-2"></i> Thank you! Your inquiry has been logged. Our engineering desk will respond within 24 hours.';
+                contactForm.reset();
+                setTimeout(() => formAlert.classList.add('hidden'), 5000);
+            });
+        }
+    </script>
+</body>
+</html>
